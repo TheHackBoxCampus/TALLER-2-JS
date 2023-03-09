@@ -1,14 +1,15 @@
-//Ley de Ohm 
-let voltage_end; 
-let Intesidad = parseInt(prompt("Ingrese la intesidad de corriente: "))
-let Resistencia = parseInt(prompt("Ingrese la Resistencia: "))
+const max_age = () => {
+    let i = 0; 
+    let valid = /^([0-9])*$/; 
+    let ages = [];
+    
+    while (i < 3){
+        let age = parseInt(prompt("\t Ingresa tu edad")); 
+        if(!age || !valid.test(age)) return;
+        ages.push(age); 
+        i+= 1;
+    }   
+    return `La edad mas alta fue: ${Math.max(...ages)}`
+}
 
-
-const voltage = (I, R, V) => {
-    V = I * R; 
-    console.log(`La cantidad de voltaje que se genero fue: \n   
-    V = ${I}A x ${R}Ω = ${V}V`)
-
-}; 
-
-voltage(Intesidad, Resistencia, voltage_end)
+console.log(max_age())
