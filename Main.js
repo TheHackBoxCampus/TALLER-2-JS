@@ -1,15 +1,8 @@
-const max_age = () => {
-    let i = 0; 
-    let valid = /^([0-9])*$/; 
-    let ages = [];
-    
-    while (i < 3){
-        let age = parseInt(prompt("\t Ingresa tu edad")); 
-        if(!age || !valid.test(age)) return;
-        ages.push(age); 
-        i+= 1;
-    }   
-    return `La edad mas alta fue: ${Math.max(...ages)}`
-}
+let num1 = parseInt(prompt("Ingrese el primero numero: "))
+let num2 = parseInt(prompt("Ingrese el segundo numero: "))
 
-console.log(max_age())
+const op = (num, num2) => { 
+    if(num<num2) console.log(`La suma es ${num + num2}, y la diferencia es ${num - num2}`)
+    if(num>num2) console.log(`El producto es ${num * num2}, y la division es ${num / num2}`)  
+}
+op(num1, num2)
